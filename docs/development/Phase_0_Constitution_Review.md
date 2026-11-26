@@ -1,6 +1,8 @@
 # Phase 0 constitution review
 
-Prompt 00.01 review gate · 2026-11-25 · Owner approval pending
+Prompt 00.01 review gate · 2026-11-25 · Original findings
+
+On 2026-11-26 the project owner ratified constitution v0.1.0 and approved ADR-001, ADR-015 and the toolchain pins for Phase 0. The [decision records](../../specs/001-project-foundation/research.md) and [clarified specification](../../specs/001-project-foundation/spec.md) provide the current scope and approval status. The entries below document the original review.
 
 Sources are the [constitution](../../.specify/memory/constitution.md), [SRS](../requirements/SRS.md), [SAD](../architecture/SAD.md) and [Phase 0 prompts](Phase_0_Prompts.md).
 

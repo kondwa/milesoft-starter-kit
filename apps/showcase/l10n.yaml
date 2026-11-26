@@ -1,0 +1,6 @@
+arb-dir: lib/l10n
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
+header: |
+  // Flutter 3.50 gen-l10n still emits the SDK's deprecated delegate names.
+  // ignore_for_file: deprecated_member_use

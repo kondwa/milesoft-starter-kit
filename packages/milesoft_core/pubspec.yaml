@@ -1,0 +1,12 @@
+name: milesoft_core
+description: Shared pure Dart capabilities for MileSoft applications.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.14.0
+
+resolution: workspace
+
+dev_dependencies:
+  test: ^1.32.0

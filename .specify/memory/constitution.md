@@ -1,11 +1,3 @@
-<!--
-Sync Impact Report
-- Version retained at 0.1.0, draft for approval. No ratification or approved amendment.
-- All twelve principles and existing mandatory requirements retained.
-- Clarified requirement traceability and phase acceptance.
-- Aligned feature specification, plan, task and checklist templates and root agent guidance.
-- Owner review remains pending. See docs/development/Phase_0_Constitution_Review.md.
--->
 # MileSoft Starter Kit Constitution
 
 ## Core Principles
@@ -84,10 +76,10 @@ A module is complete only when approved requirements and acceptance criteria are
 
 This constitution governs all starter kit code, templates, backend services, documentation and AI-assisted changes. Applicable law and distribution platform obligations take precedence; within the project, the constitution governs engineering practice and the approved SRS governs functional scope. Conflicts MUST be resolved by the project owner before implementation proceeds.
 
-The MileSoft project owner is the proposed ratifying and amendment authority. Amendments MUST include rationale, impact assessment, affected requirements and artifacts, migration steps where necessary, and explicit approval. Update the constitution version and amendment date upon approval. Use MAJOR for incompatible governance changes or removal/redefinition of principles, MINOR for new principles or substantive expansions, and PATCH for clarifications without normative changes.
+The MileSoft project owner is the ratifying and amendment authority. Amendments MUST include rationale, impact assessment, affected requirements and artifacts, migration steps where necessary, and explicit approval. Update the constitution version and amendment date upon approval. Use MAJOR for incompatible governance changes or removal/redefinition of principles, MINOR for new principles or substantive expansions, and PATCH for clarifications without normative changes.
 
 Feature artifacts MUST link individual SRS requirements to acceptance criteria, tests and tasks. Record which requirements apply to the approved phase and which remain scheduled for later milestones. Phase acceptance applies to the approved phase scope. Mandatory SRS requirements remain binding for their applicable releases. Use the root [agent guidance](../../AGENTS.md) when applying Spec Kit to this repository.
 
 Exceptions MUST be narrow, time-bound, documented with risk and mitigation, and explicitly approved. Exceptions cannot waive applicable legal obligations or mandatory production security and payment integrity gates. Review compliance during specification, planning, pull request review and release readiness. Pending SRS architectural decisions remain pending; this constitution does not ratify them implicitly.
 
-**Version**: 0.1.0 \| **Status**: Draft for approval \| **Ratified**: Pending \| **Last Amended**: 2026-11-25 (draft)
+**Version**: 0.1.0 \| **Status**: Ratified \| **Ratified**: 2026-11-26 \| **Last Amended**: 2026-11-26

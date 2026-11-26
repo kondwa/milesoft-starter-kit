@@ -1,0 +1,2 @@
+# The workspace root declares lints as a development dependency.
+include: package:lints/recommended.yaml

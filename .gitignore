@@ -1,0 +1,32 @@
+# Dart and Flutter generated state
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+.flutter-plugins
+.flutter-plugins-dependencies
+/apps/showcase/**/generated_plugin_registrant.dart
+/apps/showcase/lib/l10n/app_localizations*.dart
+build/
+coverage/
+doc/api/
+
+# Android machine-local files and signing material
+.gradle/
+local.properties
+key.properties
+*.jks
+*.keystore
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+!.env.*.example
+.idea/
+.vscode/
+*.iml
+*.swp
+*.tmp
+.DS_Store
+Thumbs.db

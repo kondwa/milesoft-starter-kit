@@ -6,7 +6,7 @@
 
 ## Summary
 
-Establish a two-member Pub Workspace, exercise one pure Dart capability from a minimal Material 3 showcase, and verify Android and web through GitHub Actions and manual launches. Deliver contributor setup and reproducible checks. The plan is ready for review. Formal ratification and applicable ADR approvals are required before dependent implementation.
+Establish a two-member Pub Workspace, exercise one pure Dart capability from a minimal Material 3 showcase, and verify Android and web through GitHub Actions and manual launches. Deliver contributor setup and reproducible checks. The owner ratified the constitution and approved the Phase 0 workspace, platform and toolchain decisions on 2026-11-26.
 
 ## Technical Context
 
@@ -29,9 +29,9 @@ Review before research and after design.
 | --- | --- | --- |
 | I, II, IV | Approved two-member scope | One documented Dart API, one showcase consumer, independent package version and one reproducible workspace resolution. |
 | III | Pure Dart boundary required | Showcase root computes the sample and passes the resulting text explicitly to the view. Static UI has no nontrivial presentation state. Verify inward imports and acyclic dependencies. |
-| V | Approved planning baseline | [Spec traceability](spec.md#scope-and-traceability-mandatory) carries into the tests and downstream tasks. Ratification and applicable ADR approvals remain implementation gates. |
+| V | Approved planning baseline | [Spec traceability](spec.md#scope-and-traceability-mandatory) carries into the tests and downstream tasks. Ratification and scoped ADR approvals are recorded. |
 | VI | Test-first and coverage policy applicable | Record red and green results for core behavior, unit/widget evidence and applicable shared business logic coverage against the 80% target. Use fixed fixtures. |
-| VII, VIII | Security applies to repository and CI. Commercial controls are outside scope. | Read-only CI permissions, no production secrets or data, and applicable dependency review. No accounts or entitlement operations. |
+| VII, VIII | Security applies to repository and CI. Commercial controls are outside scope. | Read-only CI permissions, no production secrets or data, lockfile vulnerability scanning and reviewer licence verification. |
 | IX, X | Android/web and minimum UI approved for planning | Record builds and manual launches. Check layout, semantics, text scaling and applicable keyboard access. Externalise visible English strings in showcase resources. |
 | XI, XII | No cloud runtime or production deployment | Required PR gates, reproducible toolchain and evidence traceable to commit. CI time limits, no paid external services and no release actions. |
 
@@ -54,10 +54,12 @@ Use ordinary compatible versions for member dependencies with workspace resoluti
 ## Contracts and Verification
 
 - [Core and showcase contract](contracts/core-showcase.md) and [data model](data-model.md) define the expected behavior and sample inputs.
-- [Research and proposed ADRs](research.md) document sources, alternatives and approval status. Capture relevant owner approvals under ADR-001 (workspace), ADR-015 (platforms), and a Phase 0 toolchain decision before dependent implementation. ADR-002 and ADR-013 remain deferred to distribution work.
+- [Research and ADRs](research.md) document the approved ADR-001 workspace, ADR-015 platforms and Phase 0 toolchain pins. ADR-002 and ADR-013 remain deferred to distribution work.
 - [Quickstart](quickstart.md) defines commands and acceptance evidence. Validate membership and the showcase-to-core edge, then traverse the core dependency graph for forbidden SDK/product dependencies and check the workspace graph for cycles. Inspect source imports and public entry points as well as manifests.
 - Start with failing core tests for normalisation and an empty input case. Then implement the contract and run core tests. Add a widget test for the visible result and applicable accessibility/layout checks. Report executed commands and results. Record a blocked target as unverified.
 - Run one required CI workflow on pull requests and pushes to the primary branch. Resolve with the root lockfile, then check format, lint, dependencies, tests and both builds. Configure required status checks and use a controlled failing PR to prove enforcement under normal merge permissions. Preserve evidence against the commit under review.
+- Run `osv-scanner scan source --lockfile=pubspec.lock` from root in that workflow. Pin the scanner release when implementing CI. Scanner errors and unresolved vulnerabilities fail the check unless a documented owner-approved exception applies. A reviewer verifies licences of new or changed third-party dependencies, escalating unknown or incompatible terms to the owner. Preserve scan output and the licence review or disposition in acceptance evidence.
+- The existing private repository administrator supplies its identity and enables required checks. Keep SC-003 `NOT VERIFIED` until the repository is identified and the compliant runs and controlled merge failure are recorded.
 
 ## Complexity Tracking
 

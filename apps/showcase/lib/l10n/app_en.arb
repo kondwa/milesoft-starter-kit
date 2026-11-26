@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "showcaseLabel": "MileSoft Starter Kit",
+  "@showcaseLabel": {
+    "description": "The display label passed through the shared core package."
+  }
+}

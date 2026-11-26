@@ -1,0 +1,12 @@
+name: milesoft_starter_kit
+publish_to: none
+
+environment:
+  sdk: ^3.14.0
+
+workspace:
+  - packages/milesoft_core
+  - apps/showcase
+
+dev_dependencies:
+  lints: ^6.1.0
