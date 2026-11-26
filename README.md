@@ -6,9 +6,14 @@ MileSoft Starter Kit is a reusable Dart and Flutter foundation for MileSoft appl
 
 | Path | Purpose |
 | --- | --- |
+<<<<<<< HEAD
 | `packages/milesoft_core/` | Pure Dart configuration, results, validation, pagination, retry, clock, ID and logging contracts |
 | `packages/milesoft_ui/` | Shared Flutter themes, tokens, controls, status views and responsive layout |
 | `apps/showcase/` | Android and web Material 3 showcase with a catalogue of shared core and UI examples |
+=======
+| `packages/milesoft_core/` | Independently versioned pure Dart library with the `normalizeLabel` public API |
+| `apps/showcase/` | Android and web Material 3 showcase that displays the result of the core API |
+>>>>>>> 697147f (completed phase 0)
 | `analysis_options.yaml` | Shared Dart analysis configuration |
 | `docs/` | Requirements, architecture, development guidance, and architecture decisions |
 | `specs/` | Phase specifications, plans, tasks, and acceptance evidence |
@@ -20,6 +25,7 @@ Start with the [developer setup guide](docs/development/Phase_0_Setup.md) for th
 The [Phase 0 specification](specs/001-project-foundation/spec.md), [implementation plan](specs/001-project-foundation/plan.md), and [task list](specs/001-project-foundation/tasks.md) define the scope and implementation order. Follow the [development prompt sequence](docs/development/Phase_0_Prompts.md) at each review gate and use the [validation quickstart](specs/001-project-foundation/quickstart.md) for acceptance checks.
 
 The [constitution](.specify/memory/constitution.md) governs engineering practice, the [SRS](docs/requirements/SRS.md) defines requirements, and the [SAD](docs/architecture/SAD.md) describes the architecture. The ADRs record the approved [workspace](docs/adr/ADR-001-workspace.md), [platforms](docs/adr/ADR-015-platforms.md), and [toolchain](docs/adr/phase-0-toolchain.md).
+<<<<<<< HEAD
 
 ## Integrate the shared packages
 
@@ -30,3 +36,5 @@ Existing consumers can keep using `normalizeLabel`, which trims surrounding whit
 The showcase runs with deterministic local fixtures. Call `AppConfig.load` with product defaults, the selected environment and the supported language, region and currency sets. Environment values take precedence over defaults. Apply explicit overrides only in test composition. Handle `Failed<AppConfig>` before starting dependent features. Keep secrets out of the configuration and enforce permissions separately from feature flags. [Runnable configuration example](apps/showcase/lib/catalogue_core.dart) · [Configuration rules](docs/adr/phase-1-app-config.md)
 
 Use the [Phase 1 quickstart](specs/002-core-design-system/quickstart.md) to reproduce package and showcase checks. The [acceptance evidence](specs/002-core-design-system/acceptance.md) records the current limits of manual accessibility verification.
+=======
+>>>>>>> 697147f (completed phase 0)
