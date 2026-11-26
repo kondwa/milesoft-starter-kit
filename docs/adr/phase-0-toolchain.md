@@ -24,3 +24,7 @@ The [Quality workflow](../../.github/workflows/quality.yml) also pins OSV-Scanne
 Floating SDK versions allow local and CI results to diverge. A self-hosted image would add maintenance beyond the foundation. Explicit pins reduce drift. Upgrades require reviewing compatibility and repeating the local and CI checks.
 
 [Owner approval and research](../../specs/001-project-foundation/research.md#phase-0-toolchain-adr) · [Acceptance evidence](../../specs/001-project-foundation/acceptance.md)
+
+## Phase 1 confirmation
+
+The owner approved retaining these pins on 2026-11-26. [Owner approval](../../specs/002-core-design-system/research.md#owner-approvals)
