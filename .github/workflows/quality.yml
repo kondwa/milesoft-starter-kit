@@ -1,0 +1,105 @@
+name: Quality
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  phase-0-quality:
+    name: Phase 0 quality
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    env:
+      FLUTTER_SUPPRESS_ANALYTICS: 'true'
+      GRADLE_OPTS: -Dorg.gradle.workers.max=2
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Record licence review requirement
+        if: github.event_name == 'pull_request'
+        run: |
+          echo 'Reviewers must verify licences for added or changed third-party dependencies and refer unknown or incompatible terms to the project owner.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Install pinned Flutter and Dart
+        env:
+          FLUTTER_VERSION: '3.50.0'
+          FLUTTER_SHA256: 6ea2d806fd57269ae783e6788e2a81fc26eaad782f1e0d0ff38623bb765ff9f5
+        run: |
+          archive="$RUNNER_TEMP/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz"
+          curl --fail --silent --show-error --location --retry 3 \
+            "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz" \
+            --output "$archive"
+          printf '%s  %s\n' "$FLUTTER_SHA256" "$archive" | sha256sum --check --strict
+          tar -xJf "$archive" -C "$RUNNER_TEMP"
+          rm -- "$archive"
+          echo "$RUNNER_TEMP/flutter/bin" >> "$GITHUB_PATH"
+
+      - name: Verify SDK versions and enforce the workspace lockfile
+        run: |
+          flutter --version
+          dart --version
+          flutter pub get --enforce-lockfile
+          dart pub workspace list
+
+      - name: Generate showcase localisations
+        working-directory: apps/showcase
+        run: flutter gen-l10n
+
+      - name: Check formatting, analysis, and dependency boundaries
+        run: |
+          dart format --output=none --set-exit-if-changed packages/milesoft_core apps/showcase tool
+          dart analyze --fatal-infos
+          dart run tool/check_workspace_dependencies.dart
+
+      - name: Test core
+        working-directory: packages/milesoft_core
+        run: dart test
+
+      - name: Test showcase
+        working-directory: apps/showcase
+        run: flutter test --no-pub
+
+      - name: Scan locked dependencies
+        env:
+          OSV_SCANNER_VERSION: v2.7.1
+          OSV_SCANNER_SHA256: fb7dab19a8bd9bbe5c3189f09d4b7ee1820c9553a23bac202648a56efd2f6ee8
+        run: |
+          scanner="$RUNNER_TEMP/osv-scanner"
+          curl --fail --silent --show-error --location --retry 3 \
+            "https://github.com/google/osv-scanner/releases/download/${OSV_SCANNER_VERSION}/osv-scanner_linux_amd64" \
+            --output "$scanner"
+          printf '%s  %s\n' "$OSV_SCANNER_SHA256" "$scanner" | sha256sum --check --strict
+          chmod +x "$scanner"
+          "$scanner" --version
+          "$scanner" scan source --lockfile=pubspec.lock
+
+      - uses: actions/setup-java@dd06d9cba3e5552c54d9f8ea23572deb30010f7c # v6.0.0
+        with:
+          distribution: temurin
+          java-version: '17.0.21+9'
+
+      - name: Install pinned Android SDK components
+        run: |
+          java -version 2>&1 | grep -F 'Temurin-17.0.21+9'
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install \
+            'platforms;android-36' 'build-tools;36.0.0' 'ndk;28.2.13676358'
+          flutter config --jdk-dir="$JAVA_HOME"
+
+      - name: Build Android debug APK
+        working-directory: apps/showcase
+        run: flutter build apk --debug --no-pub
+
+      - name: Build web showcase
+        working-directory: apps/showcase
+        run: flutter build web --no-pub
