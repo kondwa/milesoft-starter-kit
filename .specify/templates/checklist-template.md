@@ -36,6 +36,7 @@
 
 ## Notes
 
+- Where relevant, check that requirements trace to approved SRS IDs, acceptance criteria are measurable, and exclusions and pending decisions are explicit.
 - Mark items `[x]` only after review confirms the requirement-quality criterion is satisfied
 - Leave items unchecked when they still require clarification, correction, or reviewer evaluation
 - `$speckit-implement` reads checklist checkbox state as a gate and must not modify markers

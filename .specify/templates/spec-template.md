@@ -117,6 +117,16 @@
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
 
+## Scope and Traceability *(mandatory)*
+
+| SRS ID or approved amendment | Feature requirement | Acceptance criterion | Verification |
+| --- | --- | --- | --- |
+| [Individual ID] | [FR ID] | [Scenario or SC ID] | [Planned test or check] |
+
+**Exclusions and later milestones** — [Identify deferred capabilities and preserve their applicable release requirements.]
+
+**Open decisions** — [Record conflicts, material ambiguities and pending approvals. Identify the owner and what depends on the decision.]
+
 ## Assumptions
 
 <!--

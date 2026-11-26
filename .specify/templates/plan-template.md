@@ -40,7 +40,15 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Record the result and evidence or rationale for each applicable constitution gate. Explain any inapplicability.
+
+- Approved scope, SRS traceability, and ADRs needed before dependent implementation
+- Lean design, package boundaries, inward dependencies, reproducible resolution and platform support
+- Test-first sequencing, regression tests, applicable coverage targets and showcase evidence
+- Applicable security, privacy, entitlements, accessibility, localisation, cost and recovery obligations
+- Applicable quality gates, documentation, compatibility and approval requirements
+
+Record the owner and blocked work for unresolved decisions. Document any approved exception with its scope, duration, risk and mitigation.
 
 ## Project Structure
 
@@ -105,7 +113,7 @@ directories captured above]
 
 ## Complexity Tracking
 
-> **Fill ONLY if Constitution Check has violations that must be justified**
+> Record material complexity with its ADR. Any constitution exception requires explicit owner approval.
 
 | Violation | Why Needed | Simpler Alternative Rejected Because |
 |-----------|------------|-------------------------------------|
