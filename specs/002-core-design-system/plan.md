@@ -73,4 +73,4 @@ Apply the specification's linked SHW and NFR-ACC checks to the catalogue and pre
 
 ## Complexity Tracking
 
-The [decision research](research.md) records owner approvals, design proposals and required ADRs. The time-bound Phase 0 evidence disposition is recorded in the owner approvals. Use the [acceptance guide](quickstart.md) to record actual results. Phase 0 SC-002, SC-003 and SC-004 remain open.
+The [decision research](research.md) records owner approvals, design proposals and required ADRs. The time-bound Phase 0 evidence disposition is recorded in the owner approvals. Use the [acceptance guide](quickstart.md) to record actual results. The [amended Phase 0 acceptance record](../001-project-foundation/acceptance.md) tracks the current closure status and consolidated owner review.
