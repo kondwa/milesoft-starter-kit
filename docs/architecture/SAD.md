@@ -138,6 +138,8 @@ Arrows denote source dependencies. Composition may be performed directly by the 
 
 ## 6. Internal feature architecture
 
+Phase 1 implements three Pub workspace members. `milesoft_core` is pure Dart and owns the shared contracts and validated public app configuration. `milesoft_ui` depends on Flutter and standalone `material_ui`, owns the theme and widgets, and takes caller-localised strings and callbacks. The showcase composes both entry points and supplies deterministic data, navigation and appearance selection. The dependency checker guards inward dependencies, cycles and cross-package imports. [Public contracts](../../specs/002-core-design-system/contracts/public-api.md) · [Workspace ADR](../adr/ADR-001-workspace.md)
+
 ``` text
 lib/src/
   domain/          # entities, value objects, repository contracts

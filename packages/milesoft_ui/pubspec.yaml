@@ -1,0 +1,19 @@
+name: milesoft_ui
+description: Shared Material design system for MileSoft Flutter applications.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.14.0
+  flutter: ">=3.50.0"
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  material_ui: ^1.11.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

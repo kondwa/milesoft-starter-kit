@@ -74,15 +74,19 @@
 
 ## Developer documentation · 00.13 · US3
 
-- [ ] T018 [US3] Complete `README.md` and `docs/development/Phase_0_Setup.md` with prerequisites, setup, tests, builds, launches, CI checks, workspace/package addition guidance and links to the governing and feature documents (FR-006, NFR-MNT-002, DEV-003, SC-004). Verify local links and commands against `specs/001-project-foundation/quickstart.md` and `.github/workflows/quality.yml`.
-- [ ] T019 [US3] Consolidate approved decisions and deferred approvals in `docs/adr/ADR-001-workspace.md`, `docs/adr/ADR-015-platforms.md` and `docs/adr/phase-0-toolchain.md` (FR-001, FR-005, FR-006, ARC-011, NFR-MNT-004, DEV-007). Verify recorded status, owner approval evidence and pins against `specs/001-project-foundation/research.md`.
+- [X] T018 [US3] Complete `README.md` and `docs/development/Phase_0_Setup.md` with prerequisites, setup, tests, builds, launches, CI checks, workspace/package addition guidance and links to the governing and feature documents (FR-006, NFR-MNT-002, DEV-003, SC-004). Verify local links and commands against `specs/001-project-foundation/quickstart.md` and `.github/workflows/quality.yml`.
+- [X] T019 [US3] Consolidate approved decisions and deferred approvals in `docs/adr/ADR-001-workspace.md`, `docs/adr/ADR-015-platforms.md` and `docs/adr/phase-0-toolchain.md` (FR-001, FR-005, FR-006, ARC-011, NFR-MNT-004, DEV-007). Verify recorded status, owner approval evidence and pins against `specs/001-project-foundation/research.md`.
 - [ ] T020 [US3] Follow `docs/development/Phase_0_Setup.md` from a fresh checkout and record elapsed setup steps, command results and target launches in `specs/001-project-foundation/acceptance.md` (FR-006, DEV-003, SC-004). Using only documented prerequisites, run `flutter pub get --enforce-lockfile`, `dart pub workspace list`, the T010 and T015 commands and the pinned T016 scan.
 
 **Checkpoint** — US3 passes when a fresh-checkout walkthrough independently reproduces setup, checks and launches.
 
+**Documentation verification (2026-11-26)** — Checked README, setup guide and ADR links, command parity with the quickstart and workflow, and approvals and pins against research. `git diff --check` passed. See the [fresh-checkout walkthrough evidence](acceptance.md#sc-004--fresh-checkout-developer-walkthrough) for command results and timing.
+
 ## Acceptance · 00.14
 
-- [ ] T021 Review the approved feature artifacts and `git diff --check` plus the implementation diff against the approved Phase 0 starting commit. Complete `specs/001-project-foundation/acceptance.md` with requirement IDs, task IDs, commands and PASS, FAIL or NOT VERIFIED status for SC-001 through SC-004 (FR-001 through FR-006, ARC-002, NFR-SEC-009, AC-018). Re-run applicable local checks from T010 and T015 and reconcile T017 and T020. Record scanner version, lockfile scan result, any approved exception and the reviewer’s licence findings and owner dispositions. Keep SC-003 `NOT VERIFIED` while required remote evidence is missing. Recommend internal v0.1.0 only when all mandatory checks pass. Tagging, publication and deployment require separate authorization.
+- [X] T021 Review the approved feature artifacts and `git diff --check` plus the implementation diff against the approved Phase 0 starting commit. Complete `specs/001-project-foundation/acceptance.md` with requirement IDs, task IDs, commands and PASS, FAIL or NOT VERIFIED status for SC-001 through SC-004 (FR-001 through FR-006, ARC-002, NFR-SEC-009, AC-018). Re-run applicable local checks from T010 and T015 and reconcile T017 and T020. Record scanner version, lockfile scan result, any approved exception and the reviewer’s licence findings and owner dispositions. Keep SC-003 `NOT VERIFIED` while required remote evidence is missing. Recommend internal v0.1.0 only when all mandatory checks pass. Tagging, publication and deployment require separate authorization.
+
+**Review evidence (2026-11-26)** — The [00.14 acceptance report](acceptance.md#0014-release-review--2026-11-26) records the comparison baseline, local rerun, scope and security review and criterion results. Hold internal v0.1.0. T010, T017 and T020 remain open.
 
 ## Dependencies and execution order
 

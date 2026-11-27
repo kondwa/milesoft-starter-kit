@@ -16,6 +16,7 @@ dependencies:
   intl: ^0.20.3
   material_ui: ^1.11.1
   milesoft_core: ^0.1.0
+  milesoft_ui: ^0.1.0
 
 dev_dependencies:
   flutter_test:
