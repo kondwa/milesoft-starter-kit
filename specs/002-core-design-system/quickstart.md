@@ -29,11 +29,17 @@ flutter build apk --debug --no-pub
 Pop-Location
 ```
 
-Check each process exit code before continuing. Expect three members, the approved dependency graph and passing tests. In 01.22, record executable and covered lines for shared business logic using core coverage output, document the file scope and compare the ratio against 80%. UI coverage is separate evidence. Use the pinned Phase 0 lockfile scanner and capture PR licence review for dependency changes. Verify remote CI against the reviewed SHA and record merge enforcement separately under DEV-004.
+Check each process exit code before continuing. Expect three members, the approved dependency graph and passing tests. In 01.22, record executable and covered lines for shared business logic using core coverage output, document the file scope and compare the ratio against 80%. UI coverage is separate evidence. Use the pinned Phase 0 lockfile scanner and capture licence findings for dependency changes in the consolidated version-bound owner review. Verify remote CI for the candidate source and link it from the review and record merge enforcement separately under DEV-004.
 
 The required `Phase 0 quality` job now runs format, analysis, both boundary checks, and the core, shared UI and showcase suites. The job runs the package suites without coverage instrumentation. Use the coverage commands above for acceptance evidence. The job retains locked dependency resolution, the PR licence review reminder, the scanner and both platform builds. [Quality workflow](../../.github/workflows/quality.yml)
 
 ## Manual acceptance
+
+For internal pre-1.0, verify representative catalogue and form paths across the API 36 phone and expanded profiles and Chrome at 320 and 1280 logical pixels, default and 200% text scaling, with light and dark samples. Verify meaningful names and states, visible focus and representative keyboard activation, validation errors, and usable layouts. Sample contrast and pointer or touch targets against the thresholds below. Retain all existing evidence and hold on confirmed critical accessibility defects. The complete cross-product of controls, keyboard sequences, modal actions and spoken announcements belongs to the [deferred quality backlog](../../docs/development/Release_Quality_Backlog.md).
+
+### Original full-matrix procedure
+
+This procedure records the original T034 scope and supplies reference values for sampled checks and future verification.
 
 1. Use an API 36 Android emulator with phone and expanded viewport profiles, and desktop Chrome with responsive viewport emulation. Record the Android image, browser version, actual logical viewport and effective text scale. Verify the core-derived label and discover all delivered catalogue examples.
 2. Switch light, dark and system modes. Change host appearance while in system mode. Verify overrides and attribution in both appearances.

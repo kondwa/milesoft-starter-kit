@@ -84,7 +84,7 @@ A contributor can use the repository documentation to set up the project, find t
 
 - **SC-001** — One clean checkout resolves both required workspace members, verifies an explicit valid SemVer version in the core manifest, runs the core tests independently, and passes all declared dependency-boundary checks.
 - **SC-002** — Both CI builds succeed. Record successful manual launches on one Android emulator or device and one supported web browser, with the expected core-derived result visible in each. The widget test and applicable accessibility and layout checks pass.
-- **SC-003** — All required checks pass on a compliant pull request and the primary branch. A controlled failure demonstrates that a mandatory check blocks normal merging. The record identifies the private repository, commands, results, root lockfile vulnerability scan, licence review and any applicable shared business logic coverage. Status remains `NOT VERIFIED` until the repository is identified and the required remote evidence is recorded.
+- **SC-003** — For internal pre-1.0, record successful required checks on the primary branch and a compliant PR, and a controlled failure that proves a mandatory check blocks normal merging. Equivalent current PR CI may satisfy the historical Phase 0 PR gate when passing foundation checks and current superset checks are linked. Record repository, commands, results, root lockfile scan and applicable core coverage. Record licence findings in the consolidated version-bound owner review. [Approved amendment](../../docs/adr/internal-release-quality.md)
 - **SC-004** — One fresh-checkout walkthrough completes setup, local verification and both showcase launches using the documented prerequisites and commands.
 
 ## Scope and Traceability *(mandatory)*
@@ -104,7 +104,7 @@ The table maps the Phase 0 planning baseline to the [SRS](../../docs/requirement
 
 **Release boundary** — Passing SC-001 through SC-004 qualifies Phase 0 for an internal v0.1.0 foundation recommendation. Tagging, publication and deployment each require separate authorization. Verify the external consumer and approve distribution and licensing before a release that relies on private package distribution.
 
-**Open verification inputs** — The private repository identity, required-check settings, actual runner image, clean builds and remote runs require implementation evidence. Record approvals for later capabilities before dependent work. See the [original constitution review and decision backlog](../../docs/development/Phase_0_Constitution_Review.md).
+**Open verification inputs** — The approved repository identity, required-check settings, actual runner image, clean builds and remote runs require implementation evidence. Record approvals for later capabilities before dependent work. See the [original constitution review and decision backlog](../../docs/development/Phase_0_Constitution_Review.md).
 
 ## Assumptions
 

@@ -53,7 +53,7 @@ A showcase visitor browses the component catalogue, switches themes, and tries a
 - **UI-1** — Light and dark selections apply immediately. System mode follows the host setting. Product overrides for semantic colors and typography reach representative controls in both light and dark themes, and shared spacing, elevation and radius roles apply consistently.
 - **UI-2** — A labelled text field supports entry, validation feedback, disabled and read-only states. Labelled checkboxes, switches, radio groups and dropdowns support keyboard interaction, disabled states and form validation. Buttons and dialogs respond to keyboard focus and activation. A loading button suppresses duplicate activation. A card and a notification demonstrate the shared theme and appropriate semantics.
 - **UI-3** — Loading, empty, success and error examples are distinguishable through text or semantics. The recoverable error example provides a working retry action and displays safe, externalised text.
-- **UI-4** — On Android and web, representative controls and catalogue navigation remain visible and operable at 320 and 1280 logical pixels at default and 200% text scaling. Check semantic names, contrast and touch targets at both widths and scales, and check web keyboard access and focus order.
+- **UI-4** — On Android and web, representative controls and catalogue navigation remain visible and operable at 320 and 1280 logical pixels at default and 200% text scaling. For internal pre-1.0, sample meaningful semantic names and states, form validation, visible keyboard focus, contrast and touch targets across those profiles. Confirmed critical accessibility defects block release. Record exhaustive checks in the [quality backlog](../../docs/development/Release_Quality_Backlog.md).
 - **UI-5** — Every delivered shared capability has a discoverable catalogue example using deterministic data. The existing core-derived showcase label remains covered. The branding example uses approved MileSoft assets when available and accessible “Powered by MileSoft” text otherwise.
 
 ### Edge Cases
@@ -87,8 +87,8 @@ A showcase visitor browses the component catalogue, switches themes, and tries a
 
 - **SC-001** — All CORE-1 through CORE-4 scenarios pass using deterministic unit or contract tests. The boundary check passes and shared business logic reaches at least 80% coverage.
 - **SC-002** — CONFIG-1 and CONFIG-2 pass for all three environment fixtures, including invalid input, precedence and module isolation cases.
-- **SC-003** — UI-1 through UI-5 pass. The catalogue demonstrates every delivered capability, all three theme choices and all four status presentations. Record automated checks and manual accessibility findings separately.
-- **SC-004** — Record passing formatting, analysis, tests, dependency checks, Android debug and web builds, and applicable remote CI. Record any Phase 0 gaps separately and carry them into the release decision until resolved.
+- **SC-003** — UI-1 through UI-5 pass. The catalogue demonstrates every delivered capability, all three theme choices and all four status presentations. Record automated checks and representative manual accessibility findings separately. Use the internal pre-1.0 scope in the [quality amendment](../../docs/adr/internal-release-quality.md).
+- **SC-004** — Record passing formatting, analysis, tests, dependency checks, Android debug and web builds, and applicable remote CI. Carry applicable Phase 0 gaps forward. Trace any approved equivalent CI evidence and link the consolidated version-bound owner review and licence disposition.
 
 ## Scope and Traceability *(mandatory)*
 
@@ -133,9 +133,9 @@ Acceptance scenario IDs carry into tests and ordered tasks during prompts 01.04 
 
 **Exclusions and later milestones** — Authentication, profiles, Firebase, billing, entitlements, application shell, persistent theme and language preferences, and generator or CLI work remain in their SRS roadmap phases. Theme selection here covers the live showcase session. Phase 1 includes LOC-005 string externalisation and CFG-005 product locale defaults. Phase 3 retains LOC-001 through LOC-004 and LOC-006 through LOC-010, including locale-aware formatting, language selection and RTL support. Propose leaving connectivity monitoring (COR-007), remote flags and version or maintenance controls (CFG-008, CFG-009 and CFG-010), and dashboard/reporting widgets (UI-012) for later scope approval. These exclusions preserve applicable release requirements, including persisted theme and language scenarios AC-005 and AC-006.
 
-**Open decisions for the owner**
+### **Open decisions for the owner**
 
-1. **Baseline and release sequence.** The owner approved the SRS/SAD working baseline and scoped v0.1.0 to the foundation and existing core API. The expanded core, configuration and UI target v0.2.0. Phase 0 SC-002, SC-003 and SC-004 remain open under the [implementation disposition](research.md#owner-approvals).
+1. **Baseline and release sequence.** The owner approved the SRS/SAD working baseline and scoped v0.1.0 to the foundation and existing core API. The expanded core, configuration and UI target v0.2.0. The [original implementation disposition](research.md#owner-approvals) records the previous Phase 0 gaps. Use the [amended Phase 0 acceptance record](../001-project-foundation/acceptance.md) for current status.
 2. **Scope and dependencies.** The owner approved local in-app notifications for 01.17 under UI-006 and the success state for 01.18 under UI-007. The requested 01.21 catalogue includes accessible navigation under UI-009. The workspace extension is approved. Retain standalone material_ui in the showcase. The owner approved a direct standalone material_ui dependency for milesoft_ui in 01.13. Record the Phase 1 platform decisions in the applicable ADR. Owner approval of ADR-002 and ADR-013 remains a prerequisite for dependent private distribution.
 
 The clarification log records approved decisions. The owner approved the pagination limits, filter and continuation semantics, retry defaults, workspace extension in the [approval register](research.md#increment-approvals-for-0109-through-0121). Remaining proposals include detailed transient classification and allocation of UI acceptance requirements across increments. Review these details before dependent implementation.
