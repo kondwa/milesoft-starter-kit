@@ -59,7 +59,7 @@ Use ordinary compatible versions for member dependencies with workspace resoluti
 - Start with failing core tests for normalisation and an empty input case. Then implement the contract and run core tests. Add a widget test for the visible result and applicable accessibility/layout checks. Report executed commands and results. Record a blocked target as unverified.
 - Run one required CI workflow on pull requests and pushes to the primary branch. Resolve with the root lockfile, then check format, lint, dependencies, tests and both builds. Configure required status checks and use a controlled failing PR to prove enforcement under normal merge permissions. Preserve evidence against the commit under review.
 - Run `osv-scanner scan source --lockfile=pubspec.lock` from root in that workflow. Pin the scanner release when implementing CI. Scanner errors and unresolved vulnerabilities fail the check unless a documented owner-approved exception applies. A reviewer verifies licences of new or changed third-party dependencies, escalating unknown or incompatible terms to the owner. Preserve scan output and the licence review or disposition in acceptance evidence.
-- The existing private repository administrator supplies its identity and enables required checks. Keep SC-003 `NOT VERIFIED` until the repository is identified and the compliant runs and controlled merge failure are recorded.
+- The approved repository administrator supplies its identity and enables required checks. Record passing primary-branch CI, compliant PR CI or its approved current equivalent, and a controlled blocked merge. Capture licence findings in the consolidated version-bound owner review. [Approved amendment](../../docs/adr/internal-release-quality.md)
 
 ## Complexity Tracking
 

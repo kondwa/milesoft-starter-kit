@@ -298,7 +298,7 @@ Use TypeScript strict mode, second-generation Functions, proposed Node 22, us-ce
 Monitoring                          Structured logging, crash adapters per platform, redaction and correlation IDs
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------;
 
-Unsupported capabilities must be explicitly disabled or use a documented alternative, not silently fail. Verify platform SDK support in a capability matrix. Accessibility targets WCAG 2.2 AA where applicable, with keyboard, semantics, contrast and scalable text tests.
+Unsupported capabilities must be explicitly disabled or use a documented alternative, not silently fail. Verify platform SDK support in a capability matrix. Accessibility targets WCAG 2.2 AA where applicable. Internal pre-1.0 uses representative layout, forms, semantics, visible focus, contrast, target sizes and scale checks. Apply the stronger platform and accessibility matrix for public beta and production under the [release quality ADR](../adr/internal-release-quality.md).
 
 ## 13. Application generator and showcase
 
@@ -383,7 +383,7 @@ All entries remain proposed unless ratified by the owner. Preserve the SRS ident
   ----------------------------------------------------------------------------------------------------------------------------------;
   ADR                     Decision                  Proposed default / validation needed
   ----------------------- ------------------------- --------------------------------------------------------------------------------;
-  001                     Repository                Private monorepo; verify workspace tooling
+  001                     Repository                Public monorepo per ADR-001, approved 2026-11-27
 
   002                     Distribution              Immutable private Git dependencies; prove external consumer or choose registry
 
@@ -415,11 +415,13 @@ All entries remain proposed unless ratified by the owner. Preserve the SRS ident
 
   ----------------------------------------------------------------------------------------------------------------------------------;
 
+Approved cross-phase governance is recorded in the [internal release quality ADR](../adr/internal-release-quality.md) and the [solo-maintainer review ADR](../adr/solo-maintainer-release-governance.md). Distribution and licensing decisions remain gated by ADR-002 and ADR-013.
+
 Additional decisions required before dependent implementation: canonical billing state precedence and trial policy; retention/deletion and residency; SDK version matrix; package extraction thresholds; observability provider and budget; accessibility reference devices; release credential ownership. Record context, alternatives, decision, consequences, status and approval in individual ADR files.
 
 ## 19. Architecture acceptance and limitations
 
-Architecture is accepted when a minimal and a commercial generated product build independently, optional modules can be removed, domain code has no SDK dependency, protected operations reject unauthorised clients, billing replay cannot duplicate grants, product deployments are isolated, and upgrades are reproducible. Full SRS acceptance remains mandatory for release.
+Architecture is accepted when a minimal and a commercial generated product build independently, optional modules can be removed, domain code has no SDK dependency, protected operations reject unauthorised clients, billing replay cannot duplicate grants, product deployments are isolated, and upgrades are reproducible. Apply the SRS acceptance scope for the release class. Internal pre-1.0 evidence may use equivalent current CI and verified merge enforcement for historical Phase 0 PR CI. Public beta, package distribution and production add their applicable gates under SRS §14.
 
 This is a design document, not implemented code. No SDK compatibility, build, payment integration, performance or security testing has been executed. Provider policies, runtime availability and package distribution must be verified during implementation. Interfaces, schemas and endpoints are proposed and require feature-level contracts. The SRS and constitution remain drafts; ratify them and resolve relevant ADRs before starting dependent work.
 

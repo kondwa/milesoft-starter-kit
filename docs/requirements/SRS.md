@@ -504,7 +504,7 @@ Use sandbox payments and development data only.
 
 | ID | Requirement |
 | --- | --- |
-| NFR-ACC-001 | Target WCAG 2.2 AA where applicable |
+| NFR-ACC-001 | Target WCAG 2.2 AA where applicable. Internal pre-1.0 uses representative evidence under §14. Confirmed critical accessibility defects block release. |
 | NFR-ACC-002 | Semantic labels |
 | NFR-ACC-003 | Scalable text |
 | NFR-ACC-004 | Do not rely on colour alone |
@@ -627,6 +627,10 @@ Completion depends on acceptance criteria, not elapsed time.
 
 ## 14. Release strategy
 
+Apply the [approved risk-based quality ADR](../adr/internal-release-quality.md) by release class. Internal pre-1.0 requires representative accessibility checks against NFR-ACC-001–006, with critical accessibility defects blocking release, and retains DEV-001–004, DEV-007, NFR-SEC-009, licence compliance and AC-018. Equivalent current PR CI and verified merge enforcement can satisfy historical Phase 0 PR CI when the scope and evidence are traceable. Record a consolidated owner review and licence disposition for each release version.
+
+Public beta adds an approved platform and accessibility matrix, risk-based end-to-end verification, support and feedback, and documented recovery. pub.dev distribution requires approved ADR-002 and ADR-013, compliant package contents and a verified external consumer. Stable production requires applicable full SRS acceptance, security, privacy and payment integrity checks, operational readiness and explicit deployment approval. Resolve distribution ADRs earlier if required by another mandatory dependency. Applicable legal and platform obligations apply at every tier.
+
 | Version | Scope |
 | --- | --- |
 | 0.1.0 | Foundation and core |
@@ -662,7 +666,7 @@ Targets: new application setup within 10 minutes after prerequisites; at least 6
 
 | ID | Decision | Proposed default |
 | --- | --- | --- |
-| ADR-001 | Repository | Private GitHub monorepo |
+| ADR-001 | Repository | Public GitHub monorepo, approved by the owner on 2026-11-27 |
 | ADR-002 | Distribution | Version-tagged private Git dependencies |
 | ADR-003 | Backend isolation | Independent Firebase projects per product and environment |
 | ADR-004 | Identity | Independent product accounts |
@@ -680,7 +684,7 @@ Targets: new application setup within 10 minutes after prerequisites; at least 6
 
 ## 18. Definition of done
 
-Approved requirements implemented; public interfaces documented; automated tests passing; security requirements satisfied; showcase demonstration available; integration instructions, dependencies and configuration documented; acceptance criteria satisfied.
+Approved requirements implemented; public interfaces documented; automated tests passing; security requirements satisfied; showcase demonstration available; integration instructions, dependencies and configuration documented. Satisfy the applicable §14 release-class acceptance criteria and record deferred checks and their dispositions.
 
 ## 19. Deliverables
 

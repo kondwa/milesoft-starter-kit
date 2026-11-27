@@ -1,3 +1,6 @@
+<!-- Sync impact report: 0.1.0 to 1.0.0. Amends VI, X, XII and release governance.
+Adds release-class gates. No principles removed. SRS, SAD, phase criteria and ADRs synchronized.
+Deferred verification is tracked in the quality backlog. No unresolved template placeholders. -->
 # MileSoft Starter Kit Constitution
 
 ## Core Principles
@@ -24,7 +27,7 @@ Every feature MUST trace to approved SRS requirements or an approved amendment. 
 
 ### VI. Test-First and Evidence-Based Quality
 
-For new or changed business behavior, write failing automated tests before production implementation, then implement and refactor. Defect fixes MUST include regression tests. Use unit, widget, BLoC, contract, integration, security-rule and end-to-end tests as appropriate. Shared business logic MUST target at least 80% coverage; all mandatory acceptance tests MUST pass. Coverage alone is not evidence of correctness. Tests MUST be deterministic where feasible and MUST NOT require live payments or production data. Any justified exception to test-first sequencing MUST be documented and approved; tests remain mandatory before merge.
+For new or changed business behavior, write failing automated tests before production implementation, then implement and refactor. Defect fixes MUST include regression tests. Use unit, widget, BLoC, contract, integration, security-rule and end-to-end tests as appropriate. Shared business logic MUST target at least 80% coverage; all mandatory acceptance tests MUST pass. Coverage alone is not evidence of correctness. Verification depth MUST match the release class and risk. Trace delegated or deferred checks to the approved release criteria and backlog, with actual outcomes recorded. Tests MUST be deterministic where feasible and MUST NOT require live payments or production data. Any justified exception to test-first sequencing MUST be documented and approved; tests remain mandatory before merge.
 
 ### VII. Security, Privacy and Data Isolation
 
@@ -40,7 +43,7 @@ External services MUST be accessed through replaceable adapters where they cross
 
 ### X. Consistent and Accessible User Experience
 
-Use the shared Material 3 design system with configurable product branding. Provide loading, empty, error and success states; responsive layouts; accessible semantics; scalable text; and keyboard navigation where applicable. Target WCAG 2.2 AA where applicable. User-facing strings MUST be externalised for localisation; dates, numbers and currencies MUST respect locale and product policy. Monetary values MUST use an exact representation appropriate to the currency, not binary floating-point arithmetic for financial calculations. User-facing errors MUST be actionable and MUST NOT expose internal secrets.
+Use the shared Material 3 design system with configurable product branding. Provide loading, empty, error and success states; responsive layouts; accessible semantics; scalable text; and keyboard navigation where applicable. Target WCAG 2.2 AA where applicable. Internal pre-1.0 acceptance MUST cover representative responsive layouts, semantics, supported text scaling, validation, visible focus, contrast and target sizes. Confirmed critical accessibility defects MUST block release. User-facing strings MUST be externalised for localisation; dates, numbers and currencies MUST respect locale and product policy. Monetary values MUST use an exact representation appropriate to the currency, not binary floating-point arithmetic for financial calculations. User-facing errors MUST be actionable and MUST NOT expose internal secrets.
 
 ### XI. Operational Efficiency and Reliability
 
@@ -48,7 +51,7 @@ Cloud resources MUST use bounded queries, appropriate caching and configurable s
 
 ### XII. Quality Gates and Responsible Evolution
 
-All changes MUST pass formatting, static analysis, relevant automated tests and applicable build/security checks before merge. Public APIs, configuration and integration instructions MUST be documented. Releases MUST be traceable to source commits and version tags. Production deployments require explicit approval. AI-generated code is subject to the same review, licensing, security and test standards as human-written code. Do not claim tests or builds passed unless actually executed; record blockers and incomplete verification.
+All changes MUST pass formatting, static analysis, relevant automated tests and applicable build/security checks before merge. Public APIs, configuration and integration instructions MUST be documented. Releases MUST be traceable to source commits and version tags. Internal pre-1.0 releases MUST retain PRs, passing required CI, effective branch protection, security and licence compliance, and a consolidated version-bound owner review. Equivalent current CI and verified merge enforcement MAY satisfy historical PR evidence where both scope and equivalence are documented. Public beta, external package distribution and stable production MUST meet the stronger applicable gates in the approved release quality ADR. Production deployments require explicit approval. AI-generated code is subject to the same review, licensing, security and test standards as human-written code. Do not claim tests or builds passed unless actually executed; record blockers and incomplete verification.
 
 ## Technical Standards and Constraints
 
@@ -57,7 +60,7 @@ All changes MUST pass formatting, static analysis, relevant automated tests and 
 - Use local emulators, fakes and sandbox payment accounts for development and automated tests. Production credentials and customer data MUST NOT be used in tests.
 - Configuration MUST be validated at startup. Feature flags MUST NOT bypass security or entitlement enforcement.
 - Persist timestamps in UTC where appropriate and convert for presentation; define schema versions and migration strategies.
-- Keep the repository private under the proposed ownership model; review third-party licences before adoption. Final package licensing and distribution require owner approval.
+- Use the repository visibility approved in ADR-001. Review third-party licences before adoption. Final package licensing and distribution require owner approval.
 
 ## Development Workflow and Quality Gates
 
@@ -80,6 +83,6 @@ The MileSoft project owner is the ratifying and amendment authority. Amendments 
 
 Feature artifacts MUST link individual SRS requirements to acceptance criteria, tests and tasks. Record which requirements apply to the approved phase and which remain scheduled for later milestones. Phase acceptance applies to the approved phase scope. Mandatory SRS requirements remain binding for their applicable releases. Use the root [agent guidance](../../AGENTS.md) when applying Spec Kit to this repository.
 
-Exceptions MUST be narrow, time-bound, documented with risk and mitigation, and explicitly approved. Exceptions cannot waive applicable legal obligations or mandatory production security and payment integrity gates. Review compliance during specification, planning, pull request review and release readiness. Pending SRS architectural decisions remain pending; this constitution does not ratify them implicitly.
+Exceptions MUST be narrow, time-bound, documented with risk and mitigation, and explicitly approved. Exceptions cannot waive applicable legal obligations or mandatory production security and payment integrity gates. Review compliance during specification, planning, pull request review and release readiness. Pending SRS architectural decisions require their own approval. The [internal release quality amendment](../../docs/adr/internal-release-quality.md) defines the approved evidence scope for each release class. Owner review and explicit release authorization are distinct decisions.
 
-**Version**: 0.1.0 \| **Status**: Ratified \| **Ratified**: 2026-11-26 \| **Last Amended**: 2026-11-26
+**Version**: 1.0.0 \| **Status**: Ratified \| **Ratified**: 2026-11-26 \| **Last Amended**: 2026-11-27

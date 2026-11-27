@@ -8,7 +8,9 @@ The core and showcase need reproducible local dependency resolution. The core ha
 
 ## Decision
 
-Use a private repository with one native Dart Pub Workspace. Phase 0 has two members, `packages/milesoft_core` and `apps/showcase`. Commit the root lockfile and enforce it in CI. Declare the showcase's dependency on core with a compatible version constraint. Keep shared package dependencies independent of the showcase.
+Use the public GitHub repository `kondwa/milesoft-starter-kit` with one native Dart Pub Workspace. On 2026-11-27, the project owner approved public visibility for repository ID `1472543315`, superseding the private visibility approved on 2026-11-26. Phase 0 has two members, `packages/milesoft_core` and `apps/showcase`. Commit the root lockfile and enforce it in CI. Declare the showcase's dependency on core with a compatible version constraint. Keep shared package dependencies independent of the showcase.
+
+Keep credentials, signing material, production data and secret-bearing configuration out of Git history, CI logs and published artifacts. Use placeholders in committed examples. If CI needs credentials in the future, provide them through a least-privilege secret store and keep them out of untrusted pull-request jobs. The current Quality workflow needs no project secrets.
 
 ## Alternatives and consequences
 
