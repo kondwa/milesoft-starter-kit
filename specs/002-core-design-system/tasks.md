@@ -95,7 +95,7 @@ At every implementation checkpoint, run targeted verification plus the applicabl
 
 **Verification (2026-11-26, working tree based on de4932d)** — UI-005, LOC-005, NFR-ACC-002 and NFR-ACC-005, UI-2. From UI, flutter test --no-pub test/text_field_test.dart exited 1 before implementation because MileSoftTextField was missing. The first full UI run found a redundant semantics handle still active at test end. The fixture now uses the framework test's semantics setup. Initial root analysis flagged a redundant import, which was removed. Final flutter test --no-pub passed 13 UI tests, including 4 new widget tests for semantics, input and submission, form validation, disabled/read-only states and caller ownership. Core dart test passed 39 tests and showcase flutter test --no-pub passed 3 tests. From root, dart analyze --fatal-infos, dart format --output=none --set-exit-if-changed packages/milesoft_core packages/milesoft_ui apps/showcase tool, dart run tool/check_workspace_dependencies.dart and git diff --check passed. Dependency resolution, localisation generation, platform builds, coverage and remote CI were not rerun.
 
-**Owner-approved 01.16 extension**
+### **Owner-approved 01.16 extension**
 
 - [x] T039 [US3] Add failing widget tests for checkbox, switch, radio group and dropdown in packages/milesoft_ui/test/form_controls_test.dart (UI-005, LOC-005, NFR-ACC-002, NFR-ACC-005 · UI-2).
 - [x] T040 [US3] Implement the four controls in packages/milesoft_ui/lib/src/milesoft_form_controls.dart and export them from packages/milesoft_ui/lib/milesoft_ui.dart. Support localised labels, form validation and reset, disabled states and native keyboard interaction. Depends on T039. Run flutter test --no-pub from UI (UI-005, LOC-005, NFR-ACC-002, NFR-ACC-005 · UI-2).
