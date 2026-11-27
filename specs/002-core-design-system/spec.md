@@ -51,7 +51,7 @@ A showcase visitor browses the component catalogue, switches themes, and tries a
 **Independent test** — Open the showcase with local fixtures and exercise controls using Android touch and web keyboard input.
 
 - **UI-1** — Light and dark selections apply immediately. System mode follows the host setting. Product overrides for semantic colors and typography reach representative controls in both light and dark themes, and shared spacing, elevation and radius roles apply consistently.
-- **UI-2** — A labelled form field supports entry, validation feedback, disabled and read-only states. Buttons and dialogs respond to keyboard focus and activation. A loading button suppresses duplicate activation. A card and a notification demonstrate the shared theme and appropriate semantics.
+- **UI-2** — A labelled text field supports entry, validation feedback, disabled and read-only states. Labelled checkboxes, switches, radio groups and dropdowns support keyboard interaction, disabled states and form validation. Buttons and dialogs respond to keyboard focus and activation. A loading button suppresses duplicate activation. A card and a notification demonstrate the shared theme and appropriate semantics.
 - **UI-3** — Loading, empty, success and error examples are distinguishable through text or semantics. The recoverable error example provides a working retry action and displays safe, externalised text.
 - **UI-4** — On Android and web, representative controls and catalogue navigation remain visible and operable at 320 and 1280 logical pixels at default and 200% text scaling. Check semantic names, contrast and touch targets at both widths and scales, and check web keyboard access and focus order.
 - **UI-5** — Every delivered shared capability has a discoverable catalogue example using deterministic data. The existing core-derived showcase label remains covered. The branding example uses approved MileSoft assets when available and accessible “Powered by MileSoft” text otherwise.
@@ -113,7 +113,7 @@ A showcase visitor browses the component catalogue, switches themes, and tries a
 | UI-002 | FR-004 | UI-1 | Light, dark and host appearance tests |
 | UI-003 | FR-004 | UI-1 | Semantic color and typography override tests |
 | UI-004 | FR-004 | UI-1 | Spacing, elevation and radius role checks |
-| UI-005 | FR-005 | UI-2 | Form input, validation and field-state tests |
+| UI-005 | FR-005 | UI-2 | Text, checkbox, switch, radio and dropdown form input, validation and field-state tests |
 | UI-006 | FR-005 | UI-2 | Button, card, dialog and notification widget tests |
 | UI-007 | FR-005 | UI-3 | Four-state rendering, semantics and recovery tests |
 | UI-008 | FR-005 | UI-4 | Narrow, wide and text-scale layout tests |
@@ -136,9 +136,9 @@ Acceptance scenario IDs carry into tests and ordered tasks during prompts 01.04 
 **Open decisions for the owner**
 
 1. **Baseline and release sequence.** The owner approved the SRS/SAD working baseline and scoped v0.1.0 to the foundation and existing core API. The expanded core, configuration and UI target v0.2.0. Phase 0 SC-002, SC-003 and SC-004 remain open under the [implementation disposition](research.md#owner-approvals).
-2. **Scope and dependencies.** Confirm which increments own notifications, success states and accessible catalogue navigation within UI-006, UI-007 and UI-009. Record Phase 1 workspace and platform decisions in the applicable ADRs and confirm the disposition of the existing showcase dependency `material_ui`. Owner approval of ADR-002 and ADR-013 remains a prerequisite for dependent private distribution.
+2. **Scope and dependencies.** The owner approved local in-app notifications for 01.17 under UI-006 and the success state for 01.18 under UI-007. The requested 01.21 catalogue includes accessible navigation under UI-009. The workspace extension is approved. Retain standalone material_ui in the showcase. The owner approved a direct standalone material_ui dependency for milesoft_ui in 01.13. Record the Phase 1 platform decisions in the applicable ADR. Owner approval of ADR-002 and ADR-013 remains a prerequisite for dependent private distribution.
 
-The clarification log records approved decisions. Remaining proposals for planning include exact pagination limits and filter semantics, retry defaults and classification details, and the allocation of UI acceptance requirements across increments. Review these details before dependent implementation.
+The clarification log records approved decisions. The owner approved the pagination limits, filter and continuation semantics, retry defaults, workspace extension in the [approval register](research.md#increment-approvals-for-0109-through-0121). Remaining proposals include detailed transient classification and allocation of UI acceptance requirements across increments. Review these details before dependent implementation.
 
 ## Assumptions
 

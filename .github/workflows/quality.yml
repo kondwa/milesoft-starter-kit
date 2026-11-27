@@ -58,13 +58,18 @@ jobs:
 
       - name: Check formatting, analysis, and dependency boundaries
         run: |
-          dart format --output=none --set-exit-if-changed packages/milesoft_core apps/showcase tool
+          dart format --output=none --set-exit-if-changed packages/milesoft_core packages/milesoft_ui apps/showcase tool
           dart analyze --fatal-infos
+          dart run tool/test/check_workspace_dependencies_test.dart
           dart run tool/check_workspace_dependencies.dart
 
       - name: Test core
         working-directory: packages/milesoft_core
         run: dart test
+
+      - name: Test shared UI
+        working-directory: packages/milesoft_ui
+        run: flutter test --no-pub
 
       - name: Test showcase
         working-directory: apps/showcase

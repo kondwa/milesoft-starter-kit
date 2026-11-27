@@ -3,5 +3,121 @@
   "showcaseLabel": "MileSoft Starter Kit",
   "@showcaseLabel": {
     "description": "The display label passed through the shared core package."
+  },
+  "browseCatalogue": "Browse catalogue",
+  "catalogueTitle": "Component catalogue",
+  "themePreference": "Theme preference",
+  "systemTheme": "System",
+  "lightTheme": "Light",
+  "darkTheme": "Dark",
+  "coreSection": "Core and configuration",
+  "formsSection": "Forms",
+  "controlsSection": "Buttons, cards and dialogs",
+  "statusSection": "Status views",
+  "layoutSection": "Layout and branding",
+  "coreResult": "Typed results and validation",
+  "coreUseCaseValue": "Use case result: {value}",
+  "coreValidationIssue": "Validation caught the empty label.",
+  "corePage": "Pagination and filtering",
+  "corePageValue": "First matching record: {value}. Next offset: {offset}.",
+  "coreUtilities": "Clock, identifiers and logging",
+  "coreUtilitiesValue": "Fixture date: {date}. Identifier: {identifier}. Logged attempt: {attempt}.",
+  "coreRetry": "Retry policy",
+  "coreRetryResult": "Retry completed in {attempts} attempts.",
+  "coreRetryUnavailable": "Retry example did not complete.",
+  "coreConfiguration": "Application configuration",
+  "coreConfigResult": "Environment: {environment}. Preview is enabled.",
+  "coreConfigUnavailable": "Configuration could not be loaded.",
+  "nameField": "Name",
+  "nameRequired": "Enter a name.",
+  "disabledField": "Disabled field",
+  "readOnlyField": "Read-only field",
+  "agreementField": "Accept the example terms",
+  "agreementRequired": "Accept the example terms to continue.",
+  "previewField": "Enable previews",
+  "channelField": "Delivery channel",
+  "frequencyField": "Delivery frequency",
+  "emailOption": "Email",
+  "smsOption": "SMS",
+  "dailyOption": "Daily",
+  "weeklyOption": "Weekly",
+  "optionRequired": "Choose an option.",
+  "validateForm": "Validate form",
+  "formValid": "Form is valid",
+  "filledButton": "Filled button",
+  "tonalButton": "Tonal button",
+  "outlinedButton": "Outlined button",
+  "textButton": "Text button",
+  "disabledButton": "Disabled button",
+  "loadingButton": "Saving changes",
+  "buttonActivated": "Button activated",
+  "elevatedCard": "Elevated card",
+  "filledCard": "Filled card",
+  "outlinedCard": "Outlined card",
+  "openDialog": "Open confirmation",
+  "dialogTitle": "Confirm example",
+  "dialogBody": "Review this example before continuing.",
+  "cancelAction": "Cancel",
+  "confirmAction": "Confirm",
+  "confirmedNotice": "Example confirmed",
+  "showNotification": "Show notification",
+  "notificationMessage": "Changes saved",
+  "loadingTitle": "Loading records",
+  "loadingMessage": "The loading indicator runs locally.",
+  "emptyTitle": "No records",
+  "emptyMessage": "Change your filters to see other records.",
+  "successTitle": "Records saved",
+  "errorTitle": "Could not load records",
+  "errorMessage": "Try loading the example again.",
+  "retryAction": "Try again",
+  "retryNotice": "Retry requested",
+  "layoutPrimary": "Primary pane",
+  "layoutPrimaryDetail": "The panes stack when the available width is below the example breakpoint.",
+  "layoutSecondary": "Secondary pane",
+  "layoutSecondaryDetail": "The panes share the available width in the wide layout.",
+  "attributionLabel": "Powered by MileSoft",
+  "@coreUseCaseValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "@corePageValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "offset": {
+        "type": "int"
+      }
+    }
+  },
+  "@coreUtilitiesValue": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "identifier": {
+        "type": "String"
+      },
+      "attempt": {
+        "type": "int"
+      }
+    }
+  },
+  "@coreRetryResult": {
+    "placeholders": {
+      "attempts": {
+        "type": "int"
+      }
+    }
+  },
+  "@coreConfigResult": {
+    "placeholders": {
+      "environment": {
+        "type": "String"
+      }
+    }
   }
 }

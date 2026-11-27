@@ -31,6 +31,8 @@ Pop-Location
 
 Check each process exit code before continuing. Expect three members, the approved dependency graph and passing tests. In 01.22, record executable and covered lines for shared business logic using core coverage output, document the file scope and compare the ratio against 80%. UI coverage is separate evidence. Use the pinned Phase 0 lockfile scanner and capture PR licence review for dependency changes. Verify remote CI against the reviewed SHA and record merge enforcement separately under DEV-004.
 
+The required `Phase 0 quality` job now runs format, analysis, both boundary checks, and the core, shared UI and showcase suites. The job runs the package suites without coverage instrumentation. Use the coverage commands above for acceptance evidence. The job retains locked dependency resolution, the PR licence review reminder, the scanner and both platform builds. [Quality workflow](../../.github/workflows/quality.yml)
+
 ## Manual acceptance
 
 1. Use an API 36 Android emulator with phone and expanded viewport profiles, and desktop Chrome with responsive viewport emulation. Record the Android image, browser version, actual logical viewport and effective text scale. Verify the core-derived label and discover all delivered catalogue examples.

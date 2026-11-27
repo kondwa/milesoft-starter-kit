@@ -15,8 +15,8 @@ Extend the existing pure Dart core with reusable contracts and validated configu
 | Area | Design |
 | --- | --- |
 | SDK | Retain the approved Phase 0 pins for Phase 1. Flutter 3.50.0, Dart 3.14.0, Dart constraint ^3.14.0, Android API 36 compile/target and API 24 minimum. See the [toolchain record](../../docs/adr/phase-0-toolchain.md) for the full matrix. |
-| Package resolution | Native Pub Workspace with one enforced root lockfile. Independently version shared packages. Add the UI member only after approval of the workspace decision. |
-| Runtime dependencies | Dart SDK for core and Flutter SDK for UI. Showcase consumes both through their public entry points. Use existing localisation facilities for catalogue strings. |
+| Package resolution | Native Pub Workspace with one enforced root lockfile. Independently version shared packages. Add the approved UI member in 01.13. |
+| Runtime dependencies | Dart SDK for core and Flutter SDK for UI. The approved UI runtime dependencies are the Flutter SDK and standalone material_ui because the bundled Material library is deprecated in the pinned SDK. Showcase consumes both through their public entry points. Use existing localisation facilities for catalogue strings. |
 | Platform and state | Android and web. Local fixtures, session-only theme selection, no persisted settings or backend. Use native theme selection and local state for a single preference. Apply Constitution III if nontrivial presentation state is introduced. |
 | Reliability | Bounded page sizes and retry attempts. Inject time, identifiers and retry delay for deterministic tests. No new latency target beyond applicable SRS gates. |
 
@@ -44,14 +44,14 @@ Extend the existing pure Dart core with reusable contracts and validated configu
 
 ```text
 showcase ──> milesoft_core ──> Dart SDK
-    └──────> milesoft_ui ───> Flutter SDK
+    └──────> milesoft_ui ───> Flutter SDK + material_ui
 ```
 
 See the [contracts](contracts/public-api.md) and [data model](data-model.md) for the public surface, design tokens and widget behaviour. Keep package internals private and use explicit composition for configuration and diagnostics.
 
 ## Migration and sequencing
 
-Preserve the Phase 0 API export, signature, whitespace semantics and existing tests. Keep the current home label reachable in the catalogue and keep its regression coverage. Resolve the workspace lockfile after adding UI, and verify that every member still resolves. Consider replacing the showcase's existing material_ui import with Flutter Material during catalogue migration after dependency disposition approval and parity checks. Plan an additive core version and initial UI version under SemVer. Expanded core, configuration and UI target v0.2.0. Exact package versions and tagging remain subject to release review.
+Preserve the Phase 0 API export, signature, whitespace semantics and existing tests. Keep the current home label reachable in the catalogue and keep its regression coverage. Resolve the workspace lockfile after adding UI, and verify that every member still resolves. Retain standalone material_ui in the showcase during catalogue integration. Verify imports, generated localisation integration and regression tests. Plan an additive core version and initial UI version under SemVer. Expanded core, configuration and UI target v0.2.0. Exact package versions and tagging remain subject to release review.
 
 Implement core and configuration in 01.07–01.12, package and components in 01.13–01.20, the catalogue in 01.21, and verification and documentation in 01.22–01.24. Place local UI notifications alongside interactive controls in 01.17, success alongside other state presentations in 01.18, and accessible catalogue navigation in 01.21. These allocations are proposed for 01.05.
 

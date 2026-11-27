@@ -6,6 +6,7 @@ environment:
 
 workspace:
   - packages/milesoft_core
+  - packages/milesoft_ui
   - apps/showcase
 
 dev_dependencies:
